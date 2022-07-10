@@ -3,6 +3,29 @@ Chart.js plugin to add support for TeX style axes titles
 
 ## Usage
 
+Chart.js version when writing: v3.8.0
+
+1. Load MathJAX v3.0+ library with tex input and svg output option (see Examples).
+2. Load plugin.
+3. Set axes titles in the plugin options (see Examples).
+
+Be aware to use double backslash (`\\`) in the title strings when appropriate! For example, to get TeX `sin` function, it has to be written as `\\sin` and NOT `\sin` inside the title string!
+
+## Options
+
+Following table contains the available options for the plugin. Options `xTitle` and `yTitle` are mandatory. It is also most likely neccessary to specify `xScaleID` and `yScaleID`, so that they match your scale IDs.
+
+| Option  | Type | Default value | Description |
+| -- | :--: | -- | -- |
+| xTitle | string | 'none'  | x-Axis title in TeX format |
+| yTitle | string | 'none'  | y-Axis title in TeX format |
+| xScaleID  | string | 'xAxis'  | ID of x-Scale |
+| yScaleID | string | 'yAxis'  | ID of y-Scale |
+| texOptions | object | {em: 10, ex: 5, display: true}  | Settings for MathJAX renderer |
+| padding | number | 5   | Padding between the title of axis and scale (in px) |
+
+## Example
+
 Example of HTML file HEAD:
 ```html
 <script>
@@ -40,8 +63,8 @@ const pltConfig = {
 		},
 		plugins: {
 			texaxes: {
-				xTitle : "\\frac{1}{Re}",
-				yTitle : "f(x) =  \\frac{1}{xy}",
+				xTitle : "t",
+				yTitle : "f(t) = \e^{-\\frac{t}{10}} \\cdot \\left( \\cos (t) + \\frac{\\sin(t)}{10} \\right)",
 			}
 		}
 	}
@@ -52,3 +75,7 @@ const myChart = new Chart(
 	pltConfig
 );
 ```
+
+## Screenshots
+
+![Plugin output example](example_screenshot.png)

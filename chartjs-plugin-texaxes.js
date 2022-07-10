@@ -27,23 +27,23 @@ const texaxes = {
 	beforeInit: function(chart, args, options) {
 
 		// Read user defined plugin options
-		if (typeof chart.options.plugins.texaxis.xTitle !== "undefined") {
-			this.xTitle = chart.options.plugins.texaxis.xTitle;
+		if (typeof chart.options.plugins.texaxes.xTitle !== "undefined") {
+			this.xTitle = chart.options.plugins.texaxes.xTitle;
 		}
-		if (typeof chart.options.plugins.texaxis.yTitle !== "undefined") {
-			this.yTitle = chart.options.plugins.texaxis.yTitle;
+		if (typeof chart.options.plugins.texaxes.yTitle !== "undefined") {
+			this.yTitle = chart.options.plugins.texaxes.yTitle;
 		}
-		if (typeof chart.options.plugins.texaxis.xScaleID !== "undefined") {
-			this.xScaleID = chart.options.plugins.texaxis.xScaleID;
+		if (typeof chart.options.plugins.texaxes.xScaleID !== "undefined") {
+			this.xScaleID = chart.options.plugins.texaxes.xScaleID;
 		}
-		if (typeof chart.options.plugins.texaxis.yScaleID !== "undefined") {
-			this.yScaleID = chart.options.plugins.texaxis.yScaleID;
+		if (typeof chart.options.plugins.texaxes.yScaleID !== "undefined") {
+			this.yScaleID = chart.options.plugins.texaxes.yScaleID;
 		}
-		if (typeof chart.options.plugins.texaxis.texOptions !== "undefined") {
-			this.texOptions = chart.options.plugins.texaxis.texOptions;
+		if (typeof chart.options.plugins.texaxes.texOptions !== "undefined") {
+			this.texOptions = chart.options.plugins.texaxes.texOptions;
 		}
-		if (typeof chart.options.plugins.texaxis.padding !== "undefined") {
-			this.padding = chart.options.plugins.texaxis.padding;
+		if (typeof chart.options.plugins.texaxes.padding !== "undefined") {
+			this.padding = chart.options.plugins.texaxes.padding;
 		}
 
 		// Create MathJAX objects containing titles

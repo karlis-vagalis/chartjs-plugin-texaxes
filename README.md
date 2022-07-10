@@ -11,6 +11,8 @@ Chart.js version when writing: v3.8.0
 
 Be aware to use double backslash (`\\`) in the title strings when appropriate! For example, to get TeX `sin` function, it has to be written as `\\sin` and NOT `\sin` inside the title string!
 
+Also, don't use or disable `scale.title` option!
+
 ## Options
 
 Following table contains the available options for the plugin. Options `xTitle` and `yTitle` are mandatory. It is also most likely neccessary to specify `xScaleID` and `yScaleID`, so that they match your scale IDs.

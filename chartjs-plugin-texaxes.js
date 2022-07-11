@@ -17,7 +17,7 @@ const texaxes = {
 	xScaleID : "xAxis",
 	yScaleID : "yAxis",
 	texOptions : {em: 10, ex: 5, display: true},
-	padding : 5,
+	padding : {inner: 5, outer: 5},
 
 	_xScale : null,
 	_yScale : null,
@@ -43,7 +43,12 @@ const texaxes = {
 			this.texOptions = chart.options.plugins.texaxes.texOptions;
 		}
 		if (typeof chart.options.plugins.texaxes.padding !== "undefined") {
-			this.padding = chart.options.plugins.texaxes.padding;
+			if (typeof chart.options.plugins.texaxes.padding.inner !== "undefined") {
+				this.padding.inner = chart.options.plugins.texaxes.padding.inner;
+			}
+			if (typeof chart.options.plugins.texaxes.padding.outer !== "undefined") {
+				this.padding.outer = chart.options.plugins.texaxes.padding.outer;
+			} 
 		}
 
 		// Create MathJAX objects containing titles
@@ -65,8 +70,8 @@ const texaxes = {
 		this._yScale = chart.scales[this.yScaleID];
 
 		// Add space for axes titles
-		chart.options.layout.padding.bottom = this._xRender.height + this.padding;
-		chart.options.layout.padding.left = this._yRender.height + this.padding;
+		chart.options.layout.padding.bottom = this.padding.inner + this._xRender.height + this.padding.outer;
+		chart.options.layout.padding.left = this.padding.inner + this._yRender.height + this.padding.outer;
 
 	},
 	afterDraw: function(chart, args, options) {
@@ -75,10 +80,10 @@ const texaxes = {
 
 		// Calculate postion for x-Axis title
 		var x1 = this._xScale.left + (this._xScale.width / 2) - (this._xRender.width/2);
-		var y1 = this._xScale.bottom + this.padding;
+		var y1 = this._xScale.bottom + this.padding.inner;
 
 		// Calculate postion for y-Axis title
-		var x2 = this._yScale.left - this._yRender.height - this.padding;
+		var x2 = this._yScale.left - this._yRender.height - this.padding.inner;
 		var y2 = this._yScale.bottom - (this._yScale.height / 2) + (this._yRender.width/2);
 		
 		// Draw x-Axis title

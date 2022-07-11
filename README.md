@@ -24,7 +24,7 @@ Following table contains the available options for the plugin. Options `xTitle` 
 | xScaleID  | string | 'xAxis'  | ID of x-Scale |
 | yScaleID | string | 'yAxis'  | ID of y-Scale |
 | texOptions | object | {em: 10, ex: 5, display: true}  | Settings for MathJAX renderer |
-| padding | number | 5   | Padding between the title of axis and scale (in px) |
+| padding | object | {inner: 5, outer: 5}   | Padding. Inner for amount of pixels between the title of axis and scale. Outer for amount of pixels between axis title and chart outer border |
 
 ## Example
 
